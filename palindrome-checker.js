@@ -21,7 +21,10 @@ function palindromeChecker(input) {
   const cleanInput = allLowerCase.replaceAll(/[^a-z0-9]+/g, '');
 
   // Reverse the cleaned-up input
-  const reversedInput = cleanInput.split('').reverse().join('');
+  let reversedInput = '';
+  for (let i = cleanInput.length - 1; i >= 0; i--) {
+    reversedInput += cleanInput[i];
+  }
 
   // Compare the reversed input and the cleaned-up input, returning
   // `true` if the input is a palindrome, or `false` otherwise.
